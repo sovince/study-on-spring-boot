@@ -24,7 +24,7 @@ public class DeptMapperTest {
 
     @Autowired
     DeptMapper deptMapper;
-
+    
     @Test
     public void list() {
         List<Dept> list = deptMapper.list(0,10);

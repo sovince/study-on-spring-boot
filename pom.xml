@@ -44,6 +44,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Spring Security 依赖一经引入就会开启默认配置-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
