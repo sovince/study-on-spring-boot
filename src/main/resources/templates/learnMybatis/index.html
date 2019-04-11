@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common_head :: head">
+</head>
+
+<body>
+<div class="container">
+    <table class="table">
+        <caption>Depts</caption>
+        <thead>
+        <tr>
+            <th>deptno</th>
+            <th>dname</th>
+            <th>loc</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dept:${depts}">
+            <td th:text="${dept.deptno}"></td>
+            <td th:text="${dept.dname}"></td>
+            <td th:text="${dept.loc}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <caption>DeptsAndEmps</caption>
+        <tr>
+            <th>deptno</th>
+            <th>dname</th>
+            <th>emps</th>
+        </tr>
+        <tbody>
+        <tr th:each="dept:${deptsWithEmp}">
+            <td th:text="${dept.deptno}"></td>
+            <td th:text="${dept.dname}"></td>
+            <td><p th:each="emp:${dept.emps}" th:text="${emp.ename}"></p></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

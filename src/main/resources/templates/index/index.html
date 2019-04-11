@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common_head :: head">
+</head>
+
+<body>
+<div class="container">
+    <table class="table">
+        <caption>基于SpringBoot的相关练习和组件</caption>
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>页面</th>
+            <th>JSON</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Druid</td>
+            <td><a href="/druid/index.html">监控</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Mybatis</td>
+            <td>
+                <a href="/learnMybatis/index">关联查询</a>
+            </td>
+            <td>
+                <a href="/learnMybatis/deptWithEmp">deptWithEmp</a> /
+                <a href="/learnMybatis/empWithDept">empWithDept</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Spring-AOP</td>
+            <td></td>
+            <td><a href="/aop/hello/rec">say hello</a> / <a href="/aop/fuck/rec">say fuck</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
