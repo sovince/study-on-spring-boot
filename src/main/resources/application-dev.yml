@@ -62,6 +62,12 @@ spring:
         stat:
           log-slow-sql: true
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+
 # 日志级别
 logging:
   level:
