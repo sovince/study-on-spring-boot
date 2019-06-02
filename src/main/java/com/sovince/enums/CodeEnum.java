@@ -9,11 +9,11 @@ package com.sovince.enums;
  */
 public enum CodeEnum {
 
-    SUCCESS(0,"成功"),
-    ERROR(1,"失败"),
-    ERROR_CUSTOM(2,null),
-    ERROR_UNKNOWN(3,"未知错误"),
-    INVALID_DATA(4,"无效数据"),
+    SUCCESS(0, "成功"),
+    ERROR(1, "失败"),
+    ERROR_CUSTOM(2, null),
+    ERROR_UNKNOWN(3, "未知错误"),
+    INVALID_DATA(4, "无效数据"),
     ;
     private Integer code;
     private String msg;
@@ -26,7 +26,6 @@ public enum CodeEnum {
     public Integer getCode() {
         return code;
     }
-
 
 
     public String getMsg() {

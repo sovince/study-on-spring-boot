@@ -24,10 +24,10 @@ public class DeptMapperTest {
 
     @Autowired
     DeptMapper deptMapper;
-    
+
     @Test
     public void list() {
-        List<Dept> list = deptMapper.list(0,10);
+        List<Dept> list = deptMapper.list(0, 10);
         System.out.println(list.get(1).getDname());
     }
 

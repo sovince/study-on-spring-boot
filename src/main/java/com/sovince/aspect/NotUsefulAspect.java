@@ -28,37 +28,40 @@ public class NotUsefulAspect {
 
     @Pointcut("within(com.sovince.controller.AopController)")
     @Order(2)//排序无效  why?   只能在类上注解 不能在方法上注解？
-    public void detector(){}
+    public void detector() {
+    }
 
     @Pointcut("within(com.sovince.controller.AopController)")
     @Order(1)
-    public void detector2(){}
+    public void detector2() {
+    }
 
     @Before("detector()")
-    public void check(JoinPoint joinPoint){
+    public void check(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
-        if(args!=null && args.length==1 && args[0] instanceof String){
-            if(args[0].equals("fuck")){
+        if (args != null && args.length == 1 && args[0] instanceof String) {
+            if (args[0].equals("fuck")) {
                 logger.warn("check: Don't speak french words!");
             }
         }
     }
 
     @Before("detector2()")
-    public void check2(JoinPoint joinPoint){
+    public void check2(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
-        if(args!=null && args.length==1 && args[0] instanceof String){
-            if(args[0].equals("fuck")){
+        if (args != null && args.length == 1 && args[0] instanceof String) {
+            if (args[0].equals("fuck")) {
                 logger.warn("check2: Don't speak french words!");
             }
         }
     }
 
     @Pointcut("execution(* com.sovince.controller.AopController.rec(..))")
-    public void rec() {}
+    public void rec() {
+    }
 
     @Around("rec()")
-    public String change(ProceedingJoinPoint proceedingJoinPoint){
+    public String change(ProceedingJoinPoint proceedingJoinPoint) {
         Object[] args = proceedingJoinPoint.getArgs();
 
         String proceed = null;
@@ -67,9 +70,9 @@ public class NotUsefulAspect {
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        if(args!=null && args.length==1 && args[0] instanceof String){
-            if(args[0].equals("fuck")){
-                String wran="Don't speak french words!";
+        if (args != null && args.length == 1 && args[0] instanceof String) {
+            if (args[0].equals("fuck")) {
+                String wran = "Don't speak french words!";
                 logger.warn(wran);
                 return wran;
             }

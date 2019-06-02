@@ -22,11 +22,11 @@ public class HostService {
     private HostRepository hostRepository;
 
     @Transactional
-    public Host save(Host host){
+    public Host save(Host host) {
         return hostRepository.save(host);
     }
 
-    public List<Host> query(){
+    public List<Host> query() {
         return hostRepository.findAll();
     }
 }

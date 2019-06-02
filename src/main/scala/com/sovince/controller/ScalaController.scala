@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.{GetMapping, RequestMapping, Rest
 class ScalaController {
 
   @GetMapping(Array("/hello"))
-  def hello(): String ={
+  def hello(): String = {
     "Hello Scala Boot!"
   }
 }

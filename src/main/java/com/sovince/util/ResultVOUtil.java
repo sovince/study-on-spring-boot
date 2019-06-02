@@ -15,10 +15,11 @@ public class ResultVOUtil {
 
     /**
      * 成功
+     *
      * @param data
      * @return
      */
-    public static ResultVO success(Object data){
+    public static ResultVO success(Object data) {
         ResultVO<Object> resultVO = new ResultVO<>();
         resultVO.setData(data);
         resultVO.setCode(CodeEnum.SUCCESS.getCode());
@@ -26,15 +27,16 @@ public class ResultVOUtil {
         return resultVO;
     }
 
-    public static ResultVO success(){
+    public static ResultVO success() {
         return success(null);
     }
 
     /**
      * 失败
+     *
      * @return
      */
-    public static ResultVO error(){
+    public static ResultVO error() {
         ResultVO<Object> resultVO = new ResultVO<>();
         resultVO.setCode(CodeEnum.ERROR.getCode());
         resultVO.setMsg(CodeEnum.ERROR.getMsg());
@@ -43,10 +45,11 @@ public class ResultVOUtil {
 
     /**
      * 失败 自定义原因
+     *
      * @param msg
      * @return
      */
-    public static ResultVO errorCustom(String msg){
+    public static ResultVO errorCustom(String msg) {
         ResultVO<Object> resultVO = new ResultVO<>();
         resultVO.setCode(CodeEnum.ERROR_CUSTOM.getCode());
         resultVO.setMsg(msg);

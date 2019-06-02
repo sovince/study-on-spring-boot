@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sovince.mapper.DeptMapper">
 
-    <select id="list"  resultType="Dept">
+    <select id="list" resultType="Dept">
         SELECT * FROM dept LIMIT #{index},#{limit}
     </select>
 

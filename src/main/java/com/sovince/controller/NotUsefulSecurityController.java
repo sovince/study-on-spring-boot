@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NotUsefulSecurityController {
 
     @GetMapping()
-    public String index(){
+    public String index() {
         return "Only authenticated users can see this page";
     }
 }

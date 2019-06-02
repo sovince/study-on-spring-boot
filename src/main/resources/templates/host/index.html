@@ -4,63 +4,67 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">Host Mapping</div>
-            <div class="panel-body">
-                <table class="table" id="hosts">
-                    <tr>
-                        <th>ID</th>
-                        <th>HostName</th>
-                        <th>IP</th>
-                    </tr>
-                    <tr th:each="host:${hosts}">
-                        <td th:text="${host.id}"></td>
-                        <td th:text="${host.hostname}"></td>
-                        <td th:text="${host.ip}"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="panel-footer">
-            </div>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Host Mapping</div>
+        <div class="panel-body">
+            <table class="table" id="hosts">
+                <tr>
+                    <th>ID</th>
+                    <th>HostName</th>
+                    <th>IP</th>
+                </tr>
+                <tr th:each="host:${hosts}">
+                    <td th:text="${host.id}"></td>
+                    <td th:text="${host.hostname}"></td>
+                    <td th:text="${host.ip}"></td>
+                </tr>
+            </table>
         </div>
+        <div class="panel-footer">
+        </div>
+    </div>
 
-        <div class="panel panel-info">
-            <div class="panel-heading">Add Host</div>
-            <div class="panel-body">
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="HostName" name="hostname" id="hostname">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="IP" name="ip" id="ip">
-                    </div>
-                    <button type="button" class="btn btn-default" id="submit">Submit</button>
-                </form>
+    <div class="panel panel-info">
+        <div class="panel-heading">Add Host</div>
+        <div class="panel-body">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="HostName" name="hostname" id="hostname">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="IP" name="ip" id="ip">
+                </div>
+                <button type="button" class="btn btn-default" id="submit">Submit</button>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <div class="alert alert-success" role="alert" hidden="hidden">Well done! You successfully read this
+                important alert message.
             </div>
-            <div class="panel-footer">
-                <div class="alert alert-success" role="alert" hidden="hidden">Well done! You successfully read this important alert message.</div>
-                <div class="alert alert-danger" role="alert" hidden="hidden">Oh snap! Change a few things up and try submitting again.</div>
+            <div class="alert alert-danger" role="alert" hidden="hidden">Oh snap! Change a few things up and try
+                submitting again.
             </div>
         </div>
     </div>
+</div>
 </body>
 <script>
-    $(function(){
-        $("#submit").on("click",function () {
+    $(function () {
+        $("#submit").on("click", function () {
             var hostname = $("#hostname").val();
             var ip = $("#ip").val();
             $(".alert").hide();
-            if(hostname!==""&&ip!==""){
-                $.post("/host",{hostname:hostname,ip:ip},function (result) {
-                    if(result.code===0){
+            if (hostname !== "" && ip !== "") {
+                $.post("/host", {hostname: hostname, ip: ip}, function (result) {
+                    if (result.code === 0) {
                         $(".alert-success").html("SUCCESS!").show();
-                        $("#hosts").append("<tr><td>"+result.data.id+"</td><td>"+result.data.hostname+"</td><td>"+result.data.ip+"</td></tr>");
-                    }else{
+                        $("#hosts").append("<tr><td>" + result.data.id + "</td><td>" + result.data.hostname + "</td><td>" + result.data.ip + "</td></tr>");
+                    } else {
                         $(".alert-danger").html("FAIL!").show();
                     }
                 })
-            }else {
+            } else {
                 $(".alert-danger").html("Hostname or IP can not be empty!").show();
             }
 

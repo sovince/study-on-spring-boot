@@ -9,9 +9,9 @@
 
     <select id="listWithDept" resultType="Emp">
         SELECT e.*,
-               d.deptno "dept.deptno",
-               d.dname "dept.dname",
-               d.loc "dept.loc"
+        d.deptno "dept.deptno",
+        d.dname "dept.dname",
+        d.loc "dept.loc"
         FROM emp e JOIN dept d ON e.deptno = d.deptno
         LIMIT #{index},#{limit}
     </select>

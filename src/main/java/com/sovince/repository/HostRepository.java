@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Time: 14:10
  * Description:
  */
-public interface HostRepository extends JpaRepository<Host,Integer> {
+public interface HostRepository extends JpaRepository<Host, Integer> {
 
 }

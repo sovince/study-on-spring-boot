@@ -38,7 +38,7 @@ public class HostServiceTest {
     @Test
     public void query() {
         List<Host> query = hostService.query();
-        for(Host host:query){
+        for (Host host : query) {
             System.out.println(host);
         }
     }

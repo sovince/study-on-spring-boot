@@ -3,8 +3,8 @@
 <mapper namespace="com.sovince.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="User">
-        <result column="id" jdbcType="INTEGER" property="id" />
-        <result column="name" jdbcType="VARCHAR" property="user" />
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="user"/>
     </resultMap>
 
     <select id="findOne" resultType="User">

@@ -32,14 +32,14 @@ public class LearnMybatisController {
 
 
     @GetMapping("index")
-    public String index(Model model){
+    public String index(Model model) {
         List<Dept> depts = deptService.list();
         List<Dept> allDeptsWithEmp = deptService.listAllWithEmp();
         List<Dept> deptsWithEmp = deptService.listWithEmp();
 
-        model.addAttribute("depts",depts);
-        model.addAttribute("allDeptsWithEmp",allDeptsWithEmp);
-        model.addAttribute("deptsWithEmp",deptsWithEmp);
+        model.addAttribute("depts", depts);
+        model.addAttribute("allDeptsWithEmp", allDeptsWithEmp);
+        model.addAttribute("deptsWithEmp", deptsWithEmp);
 
 //        System.out.println(deptsWithEmp);
         return "learnMybatis/index";
@@ -47,13 +47,13 @@ public class LearnMybatisController {
 
     @GetMapping("deptWithEmp")
     @ResponseBody
-    public List<Dept> deptWithEmp(){
+    public List<Dept> deptWithEmp() {
         return deptService.listWithEmp();
     }
 
     @GetMapping("empWithDept")
     @ResponseBody
-    public List<Emp> empWithDept(){
+    public List<Emp> empWithDept() {
         return empService.listWithDept();
     }
 }

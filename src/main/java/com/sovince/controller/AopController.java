@@ -18,7 +18,7 @@ public class AopController {
 
 
     @GetMapping("/{words}/rec")
-    public String rec(@PathVariable String words){
+    public String rec(@PathVariable String words) {
         return words;
     }
 }

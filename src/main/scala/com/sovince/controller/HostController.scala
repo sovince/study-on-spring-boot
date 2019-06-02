@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation._
   */
 @Controller
 @RequestMapping(Array("/host"))
-class HostController @Autowired()(hostService: HostService){
+class HostController @Autowired()(hostService: HostService) {
 
   @GetMapping(Array("/index"))
   def index(model: Model): String = {
@@ -30,13 +30,13 @@ class HostController @Autowired()(hostService: HostService){
   }
 
 
-  @RequestMapping(value = Array("","/"),method = Array(RequestMethod.POST))
+  @RequestMapping(value = Array("", "/"), method = Array(RequestMethod.POST))
   @ResponseBody
-  def save(@ModelAttribute host: Host): ResultVO[_] ={
+  def save(@ModelAttribute host: Host): ResultVO[_] = {
     val result = hostService.save(host)
-    if(result.getId>0){
+    if (result.getId > 0) {
       ResultVOUtil.success(result)
-    }else{
+    } else {
       ResultVOUtil.error()
     }
   }

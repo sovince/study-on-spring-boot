@@ -20,16 +20,16 @@ public class DeptService {
     @Autowired
     DeptMapper deptMapper;
 
-    public List<Dept> list(){
+    public List<Dept> list() {
         return deptMapper.list(0, 10);//参数写死
     }
 
-    public List<Dept> listAllWithEmp(){
+    public List<Dept> listAllWithEmp() {
         return deptMapper.listAllWithEmp();
     }
 
-    public List<Dept> listWithEmp(){
-        return deptMapper.listWithEmp(0,10);
+    public List<Dept> listWithEmp() {
+        return deptMapper.listWithEmp(0, 10);
     }
 
 }
